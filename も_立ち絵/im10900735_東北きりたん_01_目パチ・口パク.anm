@@ -1,0 +1,33 @@
+-- 目パチ
+local blinkerPatterns = {
+  "v1.!表情パーツ/目/*閉じ",
+  "v1.!表情パーツ/目/*半目",
+  "v1.!表情パーツ/目/*やや閉じ"
+}
+-- 間隔(秒)
+local blinkerInterval = 4
+-- 速さ
+local blinkerSpeed = 1
+-- オフセット(frame)
+-- "-15"だと、15フレーム目パチが遅くなる
+local blinkerOffset = -15
+-- 目パチオブジェクトを生成
+local blinker = require("PSDToolKit").Blinker.new(blinkerPatterns, blinkerInterval, blinkerSpeed, blinkerOffset)
+
+PSD:addstate(blinker)
+
+-- 口パク
+-- 上から順に 閉じ から 開き へのパターンを入れておく
+local lipSyncPatterns = {
+  "v1.!表情パーツ/口/*v",
+  "v1.!表情パーツ/口/*開き(小)",
+  "v1.!表情パーツ/口/*開き"
+}
+-- 速さ
+local lipSyncSpeed = 1
+-- 口パク準備がなくても有効
+local alwaysapply = true
+-- 口パクオブジェクトを生成
+local lipsync = require("PSDToolKit").LipSyncSimple.new(lipSyncPatterns, lipSyncSpeed, alwaysapply)
+
+PSD:addstate(lipsync)

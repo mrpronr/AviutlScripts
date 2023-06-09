@@ -1,0 +1,15 @@
+local patterns = {
+  "v1.東北きりたん/目/*07",
+  "v1.東北きりたん/目/*03",
+  "v1.東北きりたん/目/*01"
+}
+-- 間隔(秒)
+local interval = 4
+-- 速さ
+local speed = 1
+-- オフセット
+local offset = 0
+-- 目パチオブジェクトを生成
+local blinker = require("PSDToolKit").Blinker.new(patterns, interval, speed, offset)
+
+PSD:addstate(blinker)

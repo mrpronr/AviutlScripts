@@ -1,0 +1,14 @@
+-- 上から順に 閉じ から 開き へのパターンを入れておく
+local patterns = {
+  "v1.東北きりたん/口/*01",
+  "v1.東北きりたん/口/*03"
+}
+-- 速さ
+local speed = 1
+-- 口パク準備がなくても有効
+-- falseにしておくことで、セリフがないときに多目的スライドで口を変更できるようにする。
+local alwaysapply = false
+-- 口パクオブジェクトを生成
+local lipsync = require("PSDToolKit").LipSyncSimple.new(patterns, speed, alwaysapply)
+
+PSD:addstate(lipsync)

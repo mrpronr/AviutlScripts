@@ -1,0 +1,3 @@
+-- 口パク 開閉のみ
+-- patterns, speed, alwaysapply
+PSD:addstate(require("PSDToolKit").LipSyncSimple.new({"v1.顔/%xQ情/口/*通常","v1.顔/表情/口/*しゃべる"},1,true))
